@@ -45,6 +45,10 @@ workflows:
   build-test:
     jobs:
       - unit_tests:
+          filters:
+            branches:
+              only:
+                - cucumber4
       - integration_tests:
-        requires:
-          - unit_tests
+          requires:
+            - unit_tests
