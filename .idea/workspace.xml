@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="869744ea-3eb6-407b-818b-2766ec201220" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1575347941479</updated>
       <workItem from="1575347942788" duration="5041000" />
-      <workItem from="1575425051619" duration="13074000" />
+      <workItem from="1575425051619" duration="15396000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1575426673049</created>
@@ -282,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575454471626</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="update">
+      <created>1575454570177</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1575454570177</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

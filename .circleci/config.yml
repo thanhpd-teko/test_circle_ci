@@ -14,24 +14,29 @@ jobs:
   integration_tests:
     executor: win/default
     working_directory: ~/backend_app/ppm-api-testing
+#    environment:
+#      MYSQL_DATABASE: test-ppm
+#      MYSQL_USER: dev
+#      MYSQL_PASSWORD: dev
+#      MYSQL_ROOT_PASSWORD: root
     steps:
       - add_ssh_keys:
           fingerprints:
             - "1e:58:d1:86:72:f0:52:b3:e0:b2:5c:03:fe:79:89:86"
       - run:
           name: Add ssh-keyscan
-          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+          command: ssh-keyscan -H https://github.com >> ~/.ssh/known_hosts
       - run:
           name: Clone test code
           command:
-            git clone git@github.com:Lannt-teko/ppm-api-testing.git ppm-api-testing
+            git clone git@github.com:Lannt-teko/ppm-api-testing.git intergration_test
       #      - restore_cache:
       #          key: pip-{{checksum "requirements.txt"}}
       #      - run: python -m pip install --upgrade pips
       - run:
           name: Install requirements and run tests
           command: |
-            cd ppm-api-testing
+            cd intergration_test
             pip install -r requirements.txt
             pytest --submit-tests tests/functional/price/test_create_overlap_price_schedule.py
       #      - save_cache:
