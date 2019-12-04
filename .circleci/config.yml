@@ -20,7 +20,7 @@ jobs:
             - "1e:58:d1:86:72:f0:52:b3:e0:b2:5c:03:fe:79:89:86"
       - run:
           name: Add ssh-keyscan
-          command: ssh-keyscan -H git@github.com:Lannt-teko/ppm-api-testing.git >> ~/.ssh/known_hosts
+          command: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
       - run:
           name: Clone test code
           command:
