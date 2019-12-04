@@ -13,7 +13,6 @@ jobs:
           command: echo "Run unit test"
   integration_tests:
     executor: win/default
-#    working_directory: ~/intergration_test
     steps:
       - checkout
       - add_ssh_keys:
@@ -22,10 +21,11 @@ jobs:
       - run:
           name: Clone test code
           command:
-            git clone git@github.com:Lannt-teko/ppm-api-testing.git ~/intergration_test
+            git clone git@github.com:Lannt-teko/ppm-api-testing.git
 #      - restore_cache:
 #          key: pip-{{checksum "requirements.txt"}}
 #      - run: python -m pip install --upgrade pips
+#     - run: cd ppm
       - run:
           name: Install requirements
           command: pip install -r requirements.txt
