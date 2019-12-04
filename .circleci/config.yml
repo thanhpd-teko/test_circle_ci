@@ -1,6 +1,8 @@
 version: 2.1 # Use version 2.1 to enable Orb usage.
 orbs:
   win: circleci/windows@2.2.0 # The Windows orb give you everything you need to start using the Windows executor.
+workspace: &workspace
+             ~/ppm-api-testing
 jobs:
   unit_tests:
     docker:
@@ -11,8 +13,9 @@ jobs:
           command: echo "Run unit test"
   integration_tests:
     executor: win/default
+    working_directory: *workspace
     steps:
-      - checkout:
+      - checkout
       - run: git clone git@github.com:Lannt-teko/ppm-api-testing.git
       - restore_cache:
           key: pip-{{checksum "requirements.txt"}}
