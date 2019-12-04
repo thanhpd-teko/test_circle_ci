@@ -2,9 +2,10 @@ version: 2.1 # Use version 2.1 to enable Orb usage.
 orbs:
   win: circleci/windows@2.2.0 # The Windows orb give you everything you need to start using the Windows executor.
 workspace: &workspace
-             ~/ppm-api-testing
+             ~/backend_app
 jobs:
   unit_tests:
+    working_directory: *workspace
     docker:
       - image: python:3.7.3
     steps:
@@ -19,7 +20,11 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "7d:a0:1d:17:5f:1c:6b:34:27:d2:46:ac:2c:ac:a9:fc"
-      - run: git clone git@github.com:Lannt-teko/ppm-api-testing.git
+      - run:
+          name: Clone test code
+          command: >-
+            GIT_SSH_COMMAND='ssh -i ~/.ssh/id_rsa_fingerprint'
+            git clone git@github.com:Lannt-teko/ppm-api-testing.git
       - restore_cache:
           key: pip-{{checksum "requirements.txt"}}
       - run: python -m pip install --upgrade pips
