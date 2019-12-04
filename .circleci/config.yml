@@ -10,13 +10,13 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "54:0a:59:45:8a:da:a8:dc:ba:42:5c:b6:f1:14:34:c4" 
+            - "SO:ME:FIN:G:ER:PR:IN:T" 
       - run:
           name: Run unit tests
           command: echo "Run unit test"
       - run:
           name: Clone test code
-          command: git clone git@github.com:Lannt-teko/ppm-api-testing.git
+          command: git clone git@github.com:thanhpd-teko/ppm-api-testing.git
   integration_tests:
     executor: win/default
     working_directory: ~/backend_app/ppm-api-testing
