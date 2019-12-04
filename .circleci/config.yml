@@ -19,12 +19,12 @@ jobs:
     #      MYSQL_USER: dev
     #      MYSQL_PASSWORD: dev
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "1e:58:d1:86:72:f0:52:b3:e0:b2:5c:03:fe:79:89:86"
-      - run:
-          name: Add ssh-keyscan
-          command: ssh-keyscan -H https://github.com >> ~/.ssh/known_hosts
+#      - add_ssh_keys:
+#          fingerprints:
+#            - "1e:58:d1:86:72:f0:52:b3:e0:b2:5c:03:fe:79:89:86"
+#      - run:
+#          name: Add ssh-keyscan
+#          command: ssh-keygen -R github.com
       - run:
           name: Clone test code
           command:
