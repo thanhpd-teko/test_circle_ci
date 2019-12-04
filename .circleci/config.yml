@@ -13,7 +13,7 @@ jobs:
           command: echo "Run unit test"
   integration_tests:
     executor: win/default
-    working_directory: ~/backend_app
+    working_directory: ~/intergration_test
     steps:
       - checkout
       - add_ssh_keys:
