@@ -15,7 +15,6 @@ jobs:
     executor: win/default
     working_directory: ~/backend_app/ppm-api-testing
     steps:
-      - checkout
       - add_ssh_keys:
           fingerprints:
             - "1e:58:d1:86:72:f0:52:b3:e0:b2:5c:03:fe:79:89:86"
@@ -43,9 +42,7 @@ jobs:
 #          name: Run tests
 #          command: pytest --submit-tests tests/functional/price/test_create_overlap_price_schedule.py
 workflows:
-  unit_tests:
+  build-test:
     jobs:
       - unit_tests
-  integration_tests:
-    jobs:
-      - integration_tests
+
