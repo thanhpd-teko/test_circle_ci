@@ -14,11 +14,11 @@ jobs:
   integration_tests:
     executor: win/default
     working_directory: ~/backend_app/ppm-api-testing
-#    environment:
-#      MYSQL_DATABASE: test-ppm
-#      MYSQL_USER: dev
-#      MYSQL_PASSWORD: dev
-#      MYSQL_ROOT_PASSWORD: root
+    #    environment:
+    #      MYSQL_DATABASE: test-ppm
+    #      MYSQL_USER: dev
+    #      MYSQL_PASSWORD: dev
+    #      MYSQL_ROOT_PASSWORD: root
     steps:
       - add_ssh_keys:
           fingerprints:
@@ -29,7 +29,7 @@ jobs:
       - run:
           name: Clone test code
           command:
-            git clone git@github.com:Lannt-teko/ppm-api-testing.git intergration_test
+            git clone https://github.com/Lannt-teko/ppm-api-testing intergration_test
       #      - restore_cache:
       #          key: pip-{{checksum "requirements.txt"}}
       #      - run: python -m pip install --upgrade pips
