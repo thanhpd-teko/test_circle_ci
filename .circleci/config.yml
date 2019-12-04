@@ -27,10 +27,11 @@ jobs:
       #          key: pip-{{checksum "requirements.txt"}}
       #      - run: python -m pip install --upgrade pips
       - run:
-          name: Install requirements
+          name: Install requirements and run tests
           command: |
             cd ppm-api-testing
             pip install -r requirements.txt
+            pytest --submit-tests tests/functional/price/test_create_overlap_price_schedule.py
       #      - save_cache:
       #          key: pip-{{checksum "requirements.txt"}}
       #          paths:
@@ -38,9 +39,9 @@ jobs:
       #      - run:
       #          name: Setup environment variables
       #          command: cp .env.test .env
-      - run:
-          name: Run tests
-          command: pytest --submit-tests tests/functional/price/test_create_overlap_price_schedule.py
+#      - run:
+#          name: Run tests
+#          command: pytest --submit-tests tests/functional/price/test_create_overlap_price_schedule.py
 workflows:
   unit_tests:
     jobs:
