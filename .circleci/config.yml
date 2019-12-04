@@ -22,20 +22,20 @@ jobs:
           name: Clone test code
           command:
             git clone git@github.com:Lannt-teko/ppm-api-testing.git
-#      - restore_cache:
-#          key: pip-{{checksum "requirements.txt"}}
-#      - run: python -m pip install --upgrade pips
-     - run: cd ppm-api-testing
+      #      - restore_cache:
+      #          key: pip-{{checksum "requirements.txt"}}
+      #      - run: python -m pip install --upgrade pips
+      - run: cd ppm-api-testing
       - run:
           name: Install requirements
           command: pip install -r requirements.txt
-#      - save_cache:
-#          key: pip-{{checksum "requirements.txt"}}
-#          paths:
-#            - ~/.cache/pip
-#      - run:
-#          name: Setup environment variables
-#          command: cp .env.test .env
+      #      - save_cache:
+      #          key: pip-{{checksum "requirements.txt"}}
+      #          paths:
+      #            - ~/.cache/pip
+      #      - run:
+      #          name: Setup environment variables
+      #          command: cp .env.test .env
       - run:
           name: Run tests
           command: pytest --submit-tests tests/functional/price/test_create_overlap_price_schedule.py
