@@ -13,6 +13,7 @@ jobs:
           command: echo "Run unit test"
   integration_tests:
     executor: win/default
+    working_directory: ~/backend_app/ppm-api-testing
     steps:
       - checkout
       - add_ssh_keys:
@@ -28,7 +29,6 @@ jobs:
       - run:
           name: Install requirements
           command: >-
-            cd ppm-api-testing
             pip install -r requirements.txt
       #      - save_cache:
       #          key: pip-{{checksum "requirements.txt"}}
