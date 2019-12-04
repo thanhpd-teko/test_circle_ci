@@ -13,11 +13,9 @@ jobs:
           command: echo "Run unit test"
   integration_tests:
     executor: win/default
-    working_directory: ~/intergration_test
+#    working_directory: ~/intergration_test
     steps:
       - checkout
-      - attach_workspace:
-          at: ~/backend_app
       - add_ssh_keys:
           fingerprints:
             - "1e:58:d1:86:72:f0:52:b3:e0:b2:5c:03:fe:79:89:86"
@@ -28,7 +26,6 @@ jobs:
 #      - restore_cache:
 #          key: pip-{{checksum "requirements.txt"}}
 #      - run: python -m pip install --upgrade pips
-      - run: cd intergration_test
       - run:
           name: Install requirements
           command: pip install -r requirements.txt
