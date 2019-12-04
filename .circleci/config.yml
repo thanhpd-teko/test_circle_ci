@@ -42,13 +42,8 @@ jobs:
 #          name: Run tests
 #          command: pytest --submit-tests tests/functional/price/test_create_overlap_price_schedule.py
 workflows:
+  version: 2.1
   build-test:
     jobs:
-      - unit_tests:
-          filters:
-            branches:
-              only:
-                - cucumber4
-      - integration_tests:
-          requires:
-            - unit_tests
+      - unit_tests
+      - integration_tests
