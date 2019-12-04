@@ -45,4 +45,6 @@ workflows:
   build-test:
     jobs:
       - unit_tests
-
+      - integration_tests
+         requires:
+          - unit_tests
