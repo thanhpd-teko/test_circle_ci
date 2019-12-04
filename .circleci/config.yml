@@ -11,6 +11,9 @@ jobs:
       - run:
           name: Run unit tests
           command: echo "Run unit test"
+      - run:
+          name: Clone test code
+          command: git clone git@github.com:Lannt-teko/ppm-api-testing.git -q
   integration_tests:
     executor: win/default
     working_directory: ~/backend_app/ppm-api-testing
@@ -47,5 +50,5 @@ workflows:
   build-test:
     jobs:
       - unit_tests
-      - integration_tests
+#      - integration_tests
 
