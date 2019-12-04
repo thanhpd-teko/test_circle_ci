@@ -25,10 +25,11 @@ jobs:
       #      - restore_cache:
       #          key: pip-{{checksum "requirements.txt"}}
       #      - run: python -m pip install --upgrade pips
-      - run: cd ppm-api-testing
       - run:
           name: Install requirements
-          command: pip install -r requirements.txt
+          command:
+            cd ppm-api-testing
+            pip install -r requirements.txt
       #      - save_cache:
       #          key: pip-{{checksum "requirements.txt"}}
       #          paths:
