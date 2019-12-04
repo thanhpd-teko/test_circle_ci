@@ -1,6 +1,13 @@
 version: 2.1 # Use version 2.1 to enable Orb usage.
 orbs:
   win: circleci/windows@2.2.0 # The Windows orb give you everything you need to start using the Windows executor.
+
+references:
+  fingerprints: &fingerprints 1e:58:d1:86:72:f0:52:b3:e0:b2:5c:03:fe:79:89:86
+  add_ssh_keys: &add_ssh_keys
+    add_ssh_keys:
+      fingerprints:
+        - *fingerprints
 workspace: &workspace
              ~/ppm-api-testing
 jobs:
@@ -32,7 +39,7 @@ jobs:
           command: cp .env.test .env
       - run:
           name: Run tests
-          command: pytest --submit-tests ppm-api-testing/tests/functional/price/test_create_overlap_price_schedule.py
+          command: pytest --submit-tests tests/functional/price/test_create_overlap_price_schedule.py
 workflows:
   unit_tests:
     jobs:
