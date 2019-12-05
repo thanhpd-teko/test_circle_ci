@@ -10,7 +10,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "SO:ME:FIN:G:ER:PR:IN:T" 
+            - "48:ad:63:72:59:75:00:a0:db:95:aa:95:1d:f2:c8:47" 
       - run:
           name: Run unit tests
           command: echo "Run unit test"
